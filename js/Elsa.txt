@@ -1,0 +1,64 @@
+Using/Import
+
+Class Voiture (extends/implents Vechicule)
+{
+
+//Variables
+public string Couleur;
+public string Immatriculation;
+private Moteur MonMoteur;
+protected Siege MesSieges;
+private int vitesse;
+
+//Constructeurs
+//1
+public Voiture(string Couleur, string Immat, Roues mesRoues) {
+    super(roues);
+    this.Couleur = Couleur;
+    Immatriculation = Immat,
+    vitesse = 0;
+}
+//2
+public Voiture(string Couleur){
+    Voiture(couleur, "AJ323WY", 4); //Appele Constructeur 1
+}
+//3
+public Voiture(JSON){
+    Voiture(JSON.Couleur, JSON.Immat, JSON.mesRoues); //Appele Constructeur 1
+}
+
+//4
+public Voiture(){
+    couleur = "Blanche";
+    Immatriculation = "XX-XXX-XX";
+}
+/*
+Voiture Golf = new Voiture("Noir", "AJ323WY", 4);
+*/
+
+//Get
+public string getCouleur(){
+    return Couleur;
+}
+
+
+//Set
+public void setCouleur(string couleur){
+    this.Couleur = couleur,
+}
+
+
+public string klaxon(){
+    return "tutu !";
+}
+
+private void Demarrer(){
+    vitesse = 5;
+}
+
+private void Accelerer(){
+    vitesse += 5;
+}
+
+
+}
