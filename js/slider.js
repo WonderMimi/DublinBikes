@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.next').on('click', function(){
+	$('.nextBtn').on('click', function(){
 	  var currentImg = $('.active');
 	  var nextImg = currentImg.next();
   
@@ -9,7 +9,7 @@ $(document).ready(function(){
 	  }
 	});
   
-	$('.prev').on('click', function(){
+	$('.prevBtn').on('click', function(){
 	  var currentImg = $('.active');
 	  var prevImg = currentImg.prev();
   
