@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
@@ -27,17 +26,17 @@
     </header>
     <section class="block slider">
         <!-- slider  -->
-         <div class="slides">
+        <div class="slides">
             <img class="prevBtn" src="img/PlayPrev.svg" alt="diapo précédente">
             <div class="slide-inner">
-                <img src="img/LSlide1.jpg" alt="bienvenue" class="active">
-                <img src="img/LSlide2.jpg" alt="bienvenue">
-                <img src="img/LSlide3.jpg" alt="comment utiliser le slider">
-                <img src="img/LSlide4.jpg" alt="stand pour sécuriser un vélo">
-                <img src="img/LSlide5.jpg" alt="retourner un vélo">
-                <img src="img/LSlide6.jpg" alt="retourner un vélo">
+                <img src="img/LSlide1.jpg" alt="bienvenue" class="fade active">
+                <img src="img/LSlide2.jpg" alt="comment utiliser ce diaporama" class="fade">
+                <img src="img/LSlide3.jpg" alt="état des stations" class="fade">
+                <img src="img/LSlide4.jpg" alt="choisir une station" class="fade">
+                <img src="img/LSlide5.jpg" alt="effectuer la réservation" class="fade">
+                <img src="img/LSlide6.jpg" alt="aller chercher le vélo" class="fade">
             </div>
-            <img  class="nextBtn" src="img/PlayNext.svg" alt="diapo suivante" >
+            <img class="nextBtn" src="img/PlayNext.svg" alt="diapo suivante">
         </div>
     </section>
     <section id="booking">
@@ -47,12 +46,9 @@
         <div class="block station_details booking">
             <div class="block" id="station_details">
                 <h2 id="detailsDeLaStation">Détails de la station</h2>
-                <p><span id="station_adresse">Adresse : </span><span
-                        id="address"></span></p>
-                <p><span id="station_statut">Statut : </span><span
-                        id="status"></span></p>
-                <p><span id="nbDePlaces">Nombre de place(s) : </span><span
-                        id="places"></span></p>
+                <p><span id="station_adresse">Adresse : </span><span id="address"></span></p>
+                <p><span id="station_statut">Statut : </span><span id="status"></span></p>
+                <p><span id="nbDePlaces">Nombre de place(s) : </span><span id="places"></span></p>
                 <p><span id="availableBikes">Vélo(s) disponible(s) :
                     </span><span id="available-bikes"></span></p>
                 <button id="book" type="submit">Réserver</button>
@@ -62,14 +58,12 @@
                 <h2 id="form_title">Formulaire de réservation</h2>
                 <p>
                     <label id="name_label" for="name">Nom</label> :
-                    <input class="user" type="text" name="name" id="name"
-                        value="" placeholder="Votre nom " minlength="3"
-                        maxlength="15" required>
+                    <input class="user" type="text" name="name" id="name" value="" placeholder="Votre nom "
+                        minlength="3" maxlength="15" required>
                 </p>
                 <p>
                     <label id="firstname_label" for="firstname">Prénom</label> :
-                    <input class="user" type="text" name="firstname"
-                        id="firstname" value="" placeholder="Votre prénom "
+                    <input class="user" type="text" name="firstname" id="firstname" value="" placeholder="Votre prénom "
                         minlength="3" maxlength="15" required>
                 </p>
                 <button id="form_submit" type="submit">Envoyer</button>
@@ -105,18 +99,19 @@
             </div>
             <p id="timer_msg"></p>
             <button id="timer_reset" class="button" type="reset">Annuler ma
-                    réservation</button>
+                réservation</button>
             <div id="simpleModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
-                            <span class="closeBtn">&times;</span>
+                        <span class="closeBtn">&times;</span>
                         <h2>Message</h2>
                     </div>
                     <div class="modal-body">
                         <p>Votre réservation a bien été annulée</p>
                     </div>
                     <div class="modal-footer">
-                        <!-- <h3>OK | Cancel</h3> -->  <!--TODO: add OK,cancel button -->
+                        <!-- <h3>OK | Cancel</h3> -->
+                        <!--TODO: add OK,cancel button -->
                     </div>
                 </div>
             </div>
