@@ -179,4 +179,4 @@ if (canvas.getContext) {
     })
 } else {
     alert("Votre navigateur ne supporte pas cette fonctionnzlité. Veuillez essayer avec un autre navigateur.");
-}; //TODO: replace alert by <p>
+}; 

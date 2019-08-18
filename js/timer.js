@@ -35,31 +35,32 @@ function displayUserInfos() {
     }, 60000);    
 };
 
+
 // Gets the modal element
-const modal = document.getElementById("simpleModal");
+const $modal = $("#simpleModal");
 // Gets cancel booking button
-const modalBtn = document.getElementById("timer_reset");
+const $modalBtn = $("#timer_reset");
 // Gets close button (X)
-const closeBtn = document.querySelector(".closeBtn");
+const $closeBtn = $(".closeBtn");
 // Listens for the open click
-modalBtn.addEventListener("click", openModal);
+$modalBtn.on("click", openModal);
 // Listens for the click on the X button
-closeBtn.addEventListener("click", closeModal);
+$closeBtn.on("click", closeModal);
 // Listens for outside modal click
-window.addEventListener("click", outsideClick);
+window.on("click", outsideClick);
 // Function to open the modal
 function openModal() {
-    modal.style.display = "block";
+    $modal.show();
 }
 // Function to close the modal
 function closeModal() {
-    modal.style.display = "none";
-    document.querySelector(".timer").style.display = "none"; 
+    $modal.hide();
+    $(".timer").hide(); 
 }
 // Function to close modal if clicked outside
 function outsideClick(e) {
-    if (e.target == modal) {
-        modal.style.display = "none";
-        document.querySelector(".timer").style.display = "none"; 
+    if (e.target == $modal) {
+        $modal.hide();
+        $(".timer").hide(); 
     };
 }

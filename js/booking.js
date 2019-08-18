@@ -1,5 +1,4 @@
 // declaration des variables pour sélectionner les elements HTML
-const bookBtn = $("#book"); //document.querySelector('#book');
 const form = document.querySelector('.form');
 const formSubmitBtn = $("#form_submit");
 
@@ -8,24 +7,15 @@ function hideBookBtn() {
  	if (chosenStation.bikesNb === 0 || chosenStation.status != "OPEN") {  
    		$("#book").hide();
 			if (chosenStation.status != "OPEN") {
-				$("#status").css({
-					color: "red",
-					fontWeight: 700
-				});
-				$("#available-bikes").css({
-					color: "red",
-					fontWeight: 700
-				});
+				$("#status").addClass("boldred");
+				$("#available-bikes").addClass("boldred");
 			} else {
 				$("#status").css("color", "green");
-				$("#available-bikes").css({
-					color: "red",
-					fontWeight: 700
-				});
+				$("#available-bikes").addClass("boldred");
 			}; 
   	} else {
 		$("available-bikes").css({
-			color: "black",
+			color: "black",     //FIXME: does not work if red or orange stations were selected before.
 			fontWeight: 400
 		});
    		 $("#book").show();
@@ -37,14 +27,14 @@ $("#book").click(function() {
   	form.style.display = "block";
 })
 
-//TODO: utiliser FormData object pour récupérer les infos du form https://flaviocopes.com/formdata/
-
 // shows canvas on form "submit" button click
 const canvasElt = document.querySelector(".canvas");
 
 formSubmitBtn.click(function(e){
 	let name = form.elements.name.value;
-    let firstname = form.elements.firstname.value;
+	// localStorage.setItem("formName": name);
+	let firstname = form.elements.firstname.value;
+	// localStorage.setItem("formFirstname": firstname);
     if (name == "" || firstname == "") { // checks that name and firstname fields are not empty
         let warning = document.createElement("p");   
         warning.textContent = ("Les champs 'nom' et 'prénom' sont obligatoires");

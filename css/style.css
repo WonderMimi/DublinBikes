@@ -24,6 +24,12 @@ button {
     outline: none;
 }
 
+button:hover {
+    background-color: #124250;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
 
 /* =======================  HEADER  ======================*/
 
@@ -49,17 +55,10 @@ header {
     width: 10%;
 }
 
-/* #language {
-    margin-top: 40px;
-    height: 40px;
-    cursor: pointer;
-} */
-
 /* =======================  SLIDER  ======================*/
 
 .slider {
     overflow: auto;
-    height: 380px;
     background-color: rgb(250, 147, 109);
 }
 
@@ -82,6 +81,11 @@ header {
 
 .slides img.active {
     display: inline-block;
+}
+
+#pause {
+    margin: 10px auto ;
+    display: block;
 }
 
 /* Fade effect used for slideshow  */
@@ -135,6 +139,10 @@ header {
 }
 
 /* =======================  BOOKING  ======================*/
+.boldred {
+    color: red;
+    font-weight: 700;
+}
 
 .station_details {
     display: flex;
@@ -174,7 +182,7 @@ header {
 }
 
 #canvas {
-    border: 2px ridge darkblue;
+    border: 2px ridge #124250;
     background-color: white;
 }
 
