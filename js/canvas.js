@@ -143,9 +143,7 @@ if (canvas.getContext) {
     let warning = document.createElement("p"); //FIXME: make sure warning msg displayed only once even if btn is clicked many times (use boolean)
     var warningMsgDisplayed = false;
     canvasSubmit.addEventListener("click", function () {
-        timer.minutes = 20; //FIXME: does not reset timer
-        if (canvas.toDataURL() ==
-            document.getElementById("blank_canvas").toDataURL()) {
+        if (canvas.toDataURL() == document.getElementById("blank_canvas").toDataURL()) {
             warning.textContent = ("Merci de signer avant de valider.");
             warning.style.cssText = "font-weight: bolder; color: red; font-size: 1.1em;"
             let canvasControls = document.querySelector("#controls");
@@ -159,9 +157,9 @@ if (canvas.getContext) {
             context.clearRect(0, 0, context.canvas.width, context.canvas.height);
             warning.style.display = "none";
             warningMsgDisplayed = false;
-            canvasElt.style.display = "none";
+            $canvasElt.hide();
             $('.timer').show();
-            displayUserInfos();
+            // displayUserInfos();
         }
     })
 
@@ -173,7 +171,7 @@ if (canvas.getContext) {
     // Clears and hides canvas when "cancel" btn is clicked
     $("#canvas_cancel").click(function () {
         context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-        canvasElt.style.display = "none";
+        $canvasElt.hide();
         warning.style.display = "none";
         warningMsgDisplayed = false;
     })

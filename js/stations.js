@@ -10,18 +10,21 @@ class Station {
 		this.marker = station.marker;
 	};
 
+	
+
 	displayInfos() {
-		document.getElementById("address").innerHTML = this.address;
-		document.getElementById("status").innerHTML = this.status;
-		if (this.status === "CLOSED") {
-			document.getElementById("status").textContent = "Fermée";
-			document.getElementById("status").style.cssText = "font-weight: bold; color: red;";
+		
+		$("#address").html(this.address);
+		$("#status").html(this.status);
+		if (this.status === "CLOSED") {  //TODO : add markers colors
+			$("#status").text("Fermée");
+			$("#status").css({"font-weight": "bold", "color": "red"});
 		} else {
-			document.getElementById("status").textContent = "Ouverte";
-			document.getElementById("status").style.cssText = "font-weight: bold; color: green;";
+			$("#status").text("Ouverte");
+			$("#status").css({"font-weight": "bold", "color": "green"});
 		};
-		document.getElementById("places").innerHTML = this.stands;
-		document.getElementById("available-bikes").innerHTML = this.bikesNb;
+		$("#places").html(this.stands);
+		$("#available-bikes").html(this.bikesNb);
 		station_details.style.display = "block";
 		hideBookBtn();
 	};

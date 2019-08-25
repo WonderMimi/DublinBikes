@@ -16,7 +16,7 @@
 <body>
     <header>
         <img class="logodb" src="img/dbikes_logo.png" alt="Dublin Bikes logo">
-        <p class="brand">dublinbikes</p>
+        <h1 class="brand">dublinbikes</h1>
         <img class="DCC" src="img/DCC.png" alt="Dublin Bikes logo">
         <!-- <button id="language">fr</button> -->
     </header>
@@ -87,14 +87,14 @@
                 <p><span id="bonjour">Bonjour </span>
                     <span id="timer_firstname"></span>
                     <span id="timer_name"></span>
-                    <span id="time_left">, il ne vous reste plus que </span>
+                    <span>, il ne vous reste plus que </span>
                     <span id="time">20</span>
-                    <span id="gotostation"> minute(s) pour récupérer le vélo
+                    <span> minute(s) pour récupérer le vélo
                         réservé à la station </span>
                     <span id="timer_station"></span>
                 </p>
             </div>
-            <p id="timer_msg"></p>
+            <!-- <p id="timer_msg"></p> -->
             <button id="timer_reset" class="button" type="reset">Annuler ma
                 réservation</button>
             <div id="simpleModal" class="modal">
@@ -106,10 +106,7 @@
                     <div class="modal-body">
                         <p>Votre réservation a bien été annulée</p>
                     </div>
-                    <div class="modal-footer">
-                        <!-- <h3>OK | Cancel</h3> -->
-                        <!--TODO: add OK,cancel button -->
-                    </div>
+                    <div class="modal-footer"></div>
                 </div>
             </div>
         </div>
@@ -122,13 +119,13 @@
 
     </footer>
 
-    <!--     JQuery and Leaflet scripts        -->
+    <!--     JQuery and Leaflet script files        -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
         crossorigin=""></script>
     
-    <!--    Personal scripts    -->
+    <!--    Personal script files    -->
     <script src="js/stations.js"></script>
     <script src="js/map.js"></script>
     <script src="js/booking.js"></script>
@@ -138,5 +135,4 @@
 
 
 </body>
-
 </html>
