@@ -1,76 +1,84 @@
-$(document).ready(function () {
-	var currentImg;
-	var nextImg;
-	var prevImg;
-	var auto = true; // Auto scroll
-	var interval = 5000;
+function Slider() {
+	let	auto = true;
+	let	interval = 5000;	// 5 secs interval between two slides
+	let delay;
+
+	const start = function() {
+		auto = true;
+		$('#pause').text('Pause');
+		delay = setInterval(nextSlide, interval); // will execute nextSlide function every 5s
+	}
 	
-	// Listens to mouse click events
+	setTimeout(start,2000);    // will start auto slider after 2 secondes
 
-	$(".nextBtn").on("click", function () {
+	const nextSlide = function() {
 		currentImg = $(".active");
-		nextImg = currentImg.next();
+        nextImg = currentImg.next();
+ 
+        if (nextImg.length) {
+            currentImg.removeClass("active").css("z-index", -10);
+            nextImg.addClass("active").css("z-index", 10);
+     	}
+	};
 
-		if (nextImg.length) {
-			currentImg.removeClass("active").css("z-index", -10);
-			nextImg.addClass("active").css("z-index", 10);
-		}
-	});
-
-	$(".prevBtn").on("click", function () {
+	const prevSlide = function() {
 		currentImg = $(".active");
-		prevImg = currentImg.prev();
-
-		if (prevImg.length) {
-			currentImg.removeClass("active").css("z-index", -10);
-			prevImg.addClass("active").css("z-index", 10);
-		}
-	});
-
-	// listens to keyboard events
-	document.addEventListener("keydown", function (e) {
-
-		if (e.keyCode === 37) {    // left arrow key
-			currentImg = $(".active");
-			prevImg = currentImg.prev();
+        prevImg = currentImg.prev();
+ 
+        if (prevImg.length) {
+            currentImg.removeClass("active").css("z-index", -10);
+            prevImg.addClass("active").css("z-index", 10);
+        }
+	};
 	
-			if (prevImg.length) {
-				currentImg.removeClass("active").css("z-index", -10);
-				prevImg.addClass("active").css("z-index", 10);
+	const pause = function() {
+		auto = false;
+		$('#pause').text('Lecture');
+		clearInterval(delay);		
+	};
+
+	const togglePausePlay = function() {
+		if (auto){
+			pause();
+		 } else {
+			start();
+		};
+	};
+			
+	this.init = function() {    
+		// Mouse events
+		$('.nextBtn').on('click', function() {
+			nextSlide();
+		})
+
+		$(".prevBtn").on('click', function () {
+			prevSlide();
+		})
+
+		$('#pause').on('click', function () {
+			togglePausePlay();
+		})
+
+		//keyboard events
+		$(document).keydown(function (e)  {	
+			switch(e.keyCode) {
+				case 37:           // left arrow
+					prevSlide()
+					break;
+				case 39:           // right arrow
+					nextSlide()
+					break;
+				case 32:			// spacebar
+					e.preventDefault()
+					togglePausePlay()
+					break;
+				default:
+					break			
 			}
+		})
+	}
+};
 
-		} else if (e.keyCode === 39) {    // right arrow key
-			currentImg = $(".active");
-			nextImg = currentImg.next();
-	
-			if (nextImg.length) {
-				currentImg.removeClass("active").css("z-index", -10);
-				nextImg.addClass("active").css("z-index", 10);
-			}
-		}
-	});
-
-	// Auto slide
-		if (auto) {
-		currentImg = $(".active");
-		nextImg = currentImg.next();
-
-		if (nextImg.length) {
-			currentImg.removeClass("active").css("z-index", -10);
-			nextImg.addClass("active").css("z-index", 10);
-		}
-		//set interval
-	} 
-
-	$("#pause").on("click", () => {
-		if (auto === false) {
-			auto = true;
-			$("#pause").css("text-content","Pause");
-		} else {
-			auto = false;
-			$("#pause").css("text-content","Lecture");
-		}
-	});
-}); 
-
+const slider = new Slider();
+slider.init();
 

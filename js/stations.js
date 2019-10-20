@@ -10,13 +10,28 @@ class Station {
 		this.marker = station.marker;
 	};
 
-	
+	hideBookBtn() {  
+		if (chosenStation.bikesNb === 0 || chosenStation.status != "OPEN") {  
+			  $("#book").hide();
+			   if (chosenStation.status != "OPEN") {
+				   $("#status").addClass("boldred");
+				   $("#available-bikes").addClass("boldred");
+			   } else {
+				   $("#status").css("color", "green");
+				   $("#available-bikes").addClass("boldred");
+			   }; 
+		 } else {
+		   $("available-bikes").css({
+			   color: "black",     //FIXME: does not work if red or orange stations were selected before.
+			   fontWeight: 400
+		   });
+			   $("#book").show();
+	 }};
 
-	displayInfos() {
-		
+	displayInfos() {	
 		$("#address").html(this.address);
 		$("#status").html(this.status);
-		if (this.status === "CLOSED") {  //TODO : add markers colors
+		if (this.status === "CLOSED") { 
 			$("#status").text("Fermée");
 			$("#status").css({"font-weight": "bold", "color": "red"});
 		} else {
@@ -26,16 +41,6 @@ class Station {
 		$("#places").html(this.stands);
 		$("#available-bikes").html(this.bikesNb);
 		station_details.style.display = "block";
-		hideBookBtn();
+		this.hideBookBtn();
 	};
-
-
-	/*   // définition des méthodes
-	getavailableSpace () {
-	  return this.bike_standss;
-	};   
-
-	getAvailableBikes() {
-	  return this.bikesNb;
-	}; */
-}
+};

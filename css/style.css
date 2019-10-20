@@ -10,7 +10,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .block {
@@ -34,7 +34,6 @@ button:hover {
     border: 2px solid #fff;
 }
 
-
 /* =======================  HEADER  ======================*/
 
 header {
@@ -51,7 +50,7 @@ header {
 
 .brand {
     color: white;
-    font-size: 4em;
+    font-size: 400%;
     font-family: 'varela_roundregular', arial, sans-serif;
 }
 
@@ -70,6 +69,8 @@ header {
     margin: auto;
     animation: slide 15s infinite;
     transition: transform 0.3s;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 10px 5px 5px rgba(36,133,161,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 0px 10px 5px 5px rgba(36,133,161,0);
 }
 
 .slides div img {
@@ -90,10 +91,10 @@ header {
 }
 
 /* Fade effect used for slideshow  */
-.fade {
+/* .fade {
     animation-name: fade;
     animation-duration: 3s;
-}
+} */
 
 @keyframes fade {
     from {
@@ -170,6 +171,10 @@ header {
     align-content: center;
 }
 
+label .user {
+    font-size: 18px;
+}
+
 #station_details,
 .form,
 .canvas {
@@ -206,10 +211,6 @@ header {
 
 #timer {
     font-size: 1.3em;
-}
-
-#time {
-    font-weight: bold;
 }
 
 .modal {

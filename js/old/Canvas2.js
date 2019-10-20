@@ -1,3 +1,5 @@
+// Fichier code procédural original et fonctionnel
+
 // sets canvas and context variables
 let canvas = document.getElementById("canvas");
 
@@ -143,6 +145,7 @@ if (canvas.getContext) {
     let warning = document.createElement("p"); //FIXME: make sure warning msg displayed only once even if btn is clicked many times (use boolean)
     var warningMsgDisplayed = false;
     canvasSubmit.addEventListener("click", function () {
+        timer.minutes = 20; //FIXME: does not reset timer
         if (canvas.toDataURL() == document.getElementById("blank_canvas").toDataURL()) {
             warning.textContent = ("Merci de signer avant de valider.");
             warning.style.cssText = "font-weight: bolder; color: red; font-size: 1.1em;"
@@ -157,7 +160,7 @@ if (canvas.getContext) {
             context.clearRect(0, 0, context.canvas.width, context.canvas.height);
             warning.style.display = "none";
             warningMsgDisplayed = false;
-            $canvasElt.hide();
+            canvasElt.style.display = "none";
             $('.timer').show();
             // displayUserInfos();
         }
@@ -171,10 +174,10 @@ if (canvas.getContext) {
     // Clears and hides canvas when "cancel" btn is clicked
     $("#canvas_cancel").click(function () {
         context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-        $canvasElt.hide();
+        canvasElt.style.display = "none";
         warning.style.display = "none";
         warningMsgDisplayed = false;
     })
 } else {
-    alert("Votre navigateur ne supporte pas cette fonctionnzlité. Veuillez essayer avec un autre navigateur.");
+    alert("Votre navigateur ne supporte pas cette fonctionnzlitÃ©. Veuillez essayer avec un autre navigateur.");
 }; 

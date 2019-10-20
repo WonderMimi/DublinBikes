@@ -18,19 +18,18 @@
         <img class="logodb" src="img/dbikes_logo.png" alt="Dublin Bikes logo">
         <h1 class="brand">dublinbikes</h1>
         <img class="DCC" src="img/DCC.png" alt="Dublin Bikes logo">
-        <!-- <button id="language">fr</button> -->
     </header>
     <section class="block slider">
         <!-- slider  -->
         <div class="slides">
             <img class="prevBtn" src="img/PlayPrev.svg" alt="diapo précédente">
             <div class="slide-inner">
-                <img src="img/LSlide1.jpg" alt="bienvenue" class="fade active">
+                <img src="img/LSlide1.jpg" alt="bienvenue" class="slide fade active">
                 <img src="img/LSlide2.jpg" alt="comment utiliser ce diaporama" class="fade">
                 <img src="img/LSlide3.jpg" alt="état des stations" class="fade">
                 <img src="img/LSlide4.jpg" alt="choisir une station" class="fade">
                 <img src="img/LSlide5.jpg" alt="effectuer la réservation" class="fade">
-                <img src="img/LSlide6.jpg" alt="aller chercher le vélo" class="fade">
+                <img src="img/LSlide6.jpg" alt="aller chercher le vélo" class="fade"> 
             </div>
             <img class="nextBtn" src="img/PlayNext.svg" alt="diapo suivante">
         </div>
@@ -50,7 +49,7 @@
                     </span><span id="available-bikes"></span></p>
                 <button id="book" type="submit">Réserver</button>
             </div>
-            <form class="block form">
+            <form class="block form" id="bookingForm">
                 <!-- booking form  -->
                 <h2 id="form_title">Formulaire de réservation</h2>
                 <p>
@@ -87,9 +86,9 @@
                 <p><span id="bonjour">Bonjour </span>
                     <span id="timer_firstname"></span>
                     <span id="timer_name"></span>
-                    <span>, il ne vous reste plus que </span>
-                    <span id="time">20</span>
-                    <span> minute(s) pour récupérer le vélo
+                    <span>, il vous reste </span>
+                    <span id="time">20:00</span>
+                    <span> pour récupérer le vélo
                         réservé à la station </span>
                     <span id="timer_station"></span>
                 </p>
@@ -100,13 +99,16 @@
             <div id="simpleModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="closeBtn">&times;</span>
-                        <h2>Message</h2>
+                        <!-- <span class="closeBtn">&times;</span> -->
+                        <h2 class="modal-title"></h2>
                     </div>
                     <div class="modal-body">
-                        <p>Votre réservation a bien été annulée</p>
+                        <p class="modal-message">/p>
                     </div>
-                    <div class="modal-footer"></div>
+                    <div class="modal-footer">
+                        <button type="submit" id="ok">OK</button>
+                        <button type="reset" id="resetModal"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,8 +133,8 @@
     <script src="js/booking.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/slider.js"></script>
-    <script src="js/canvas.js"></script>
+    <script src="js/canvas5.js"></script>
 
 
 </body>
-</html>
+</ht
